@@ -1,0 +1,82 @@
+---
+import Globo from "../iconos/Globo.astro";
+import Section from "../Section.astro";
+---
+
+<Section>
+  <div class="contenedor-headline">
+    <div class="caja-foto">
+      <figure>
+        <img src="/fotoDePerfil.jpeg" alt="foto-de-perfil" width="150px" />
+      </figure>
+    </div>
+    <div class="caja-info">
+      <h1>Nahuel Alejandro banco</h1>
+      <h3>Desarrollador Web Fullstack</h3>
+      <p>
+        +2 años de experiencia utilizando tecnologías de desarrollo full stack,
+        abarcando tanto el front-end como el back-end. Mi objetivo actual es
+        establecerme en el sector tecnológico, poder formar parte de un equipo
+        donde pueda seguir aprendiendo, aportar valor, y resolver problemas
+        reales.
+      </p>
+      <h5>Santiago del estero, Argentina</h5>
+    </div>
+    <div class="caja-links">
+      <a href="https://www.linkedin.com/in/nahuelbanco/">LinkedIn</a>
+      <a href="https://github.com/Nahuel417">GitHub</a>
+      <a href="https://web.whatsapp.com/">+54 3854085427</a>
+      <a href="https://workspace.google.com/intl/es-419_ar/gmail/"
+        >Banconahuel417@gmail.com</a
+      >
+    </div>
+  </div>
+</Section>
+
+<style>
+  .contenedor-headline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .caja-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .caja-info h1 {
+    font-size: 40px;
+  }
+
+  .caja-info h3 {
+    margin: 0 0 25px 0;
+  }
+
+  .caja-info h5 {
+    margin: 10px 0;
+  }
+
+  .caja-foto {
+    margin-bottom: 20px;
+  }
+
+  .caja-links {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0;
+    gap: 25px;
+  }
+
+  .caja-links a {
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: all 0.8s;
+    background-color: rgba(128, 128, 128, 0.2);
+  }
+
+  .caja-links a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+</style>
