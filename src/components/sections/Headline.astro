@@ -9,10 +9,12 @@ import Section from "../Section.astro";
       <figure>
         <img src="/fotoDePerfil.jpeg" alt="foto-de-perfil" width="150px" />
       </figure>
+      <div>
+        <h1>Nahuel Alejandro banco</h1>
+        <h3>Desarrollador Web Fullstack</h3>
+      </div>
     </div>
     <div class="caja-info">
-      <h1>Nahuel Alejandro banco</h1>
-      <h3>Desarrollador Web Fullstack</h3>
       <p>
         +2 años de experiencia utilizando tecnologías de desarrollo full stack,
         abarcando tanto el front-end como el back-end. Mi objetivo actual es
@@ -23,12 +25,12 @@ import Section from "../Section.astro";
       <h5>Santiago del estero, Argentina</h5>
     </div>
     <div class="caja-links">
-      <a href="https://www.linkedin.com/in/nahuelbanco/">LinkedIn</a>
-      <a href="https://github.com/Nahuel417">GitHub</a>
-      <a href="https://web.whatsapp.com/">+54 3854085427</a>
-      <a href="https://workspace.google.com/intl/es-419_ar/gmail/"
-        >Banconahuel417@gmail.com</a
+      <a href="https://www.linkedin.com/in/nahuelbanco/" target="_blank">
+        LinkedIn</a
       >
+      <a href="https://github.com/Nahuel417" target="_blank">GitHub</a>
+      <span>+54 3854085427</span>
+      <span>Banconahuel417@gmail.com</span>
     </div>
   </div>
 </Section>
@@ -44,11 +46,12 @@ import Section from "../Section.astro";
     flex-direction: column;
   }
 
-  .caja-info h1 {
-    font-size: 40px;
+  .caja-foto h1 {
+    font-size: 45px;
   }
 
-  .caja-info h3 {
+  .caja-foto h3 {
+    font-size: 23px;
     margin: 0 0 25px 0;
   }
 
@@ -58,6 +61,10 @@ import Section from "../Section.astro";
 
   .caja-foto {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
   }
 
   .caja-links {
@@ -67,16 +74,19 @@ import Section from "../Section.astro";
     gap: 25px;
   }
 
-  .caja-links a {
+  .caja-links a,
+  .caja-links span {
     border: 1px solid white;
     padding: 8px 20px;
-    border-radius: 25px;
-    transition: all 0.8s;
+    border-radius: 20px;
+    transition: all 0.4s ease-in-out;
     background-color: rgba(128, 128, 128, 0.2);
   }
 
-  .caja-links a:hover {
+  .caja-links a:hover,
+  .caja-links span:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    color: black;
+    transform: translateY(-20%);
+    color: #23262f;
   }
 </style>
