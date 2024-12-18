@@ -5,22 +5,48 @@ import Educacion from "../components/sections/Educacion.astro";
 import Headline from "../components/sections/Headline.astro";
 import Skills from "../components/sections/Skills.astro";
 import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
 ---
 
 <Layout>
-	<main>
-		<Headline />
-		<Proyectos />
-		<Educacion />
-		<Skills />
-		<AboutMe />
-	</main>
+  <header>
+    <NavBar />
+  </header>
+  <main>
+    <div>
+      <Headline />
+      <hr />
+      <Proyectos />
+      <Educacion />
+      <Skills />
+      <AboutMe />
+    </div>
+  </main>
 </Layout>
 
 <style>
-	main {
-		padding: 4rem;
-		margin: auto;
-		width: 100%;
-	}
+  header {
+    width: 750px;
+    margin: auto;
+  }
+
+  main {
+    width: 750px;
+    margin: auto;
+  }
+
+  div {
+    padding: 1.25rem;
+    margin: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 2px dotted rgba(255, 255, 255, 0.2);
+    background-color: none;
+  }
 </style>

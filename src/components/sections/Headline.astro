@@ -1,5 +1,4 @@
 ---
-import Globo from "../iconos/Globo.astro";
 import Section from "../Section.astro";
 ---
 
@@ -7,30 +6,32 @@ import Section from "../Section.astro";
   <div class="contenedor-headline">
     <div class="caja-foto">
       <figure>
-        <img src="/fotoDePerfil.jpeg" alt="foto-de-perfil" width="150px" />
+        <img src="/fotoDePerfil3.jpeg" alt="foto-de-perfil" width="100%" />
       </figure>
       <div>
-        <h1>Nahuel Alejandro banco</h1>
+        <h1>Nahuel Banco</h1>
         <h3>Desarrollador Web Fullstack</h3>
+        <p>
+          +2 años de experiencia utilizando tecnologías de desarrollo fullstack,
+          abarcando tanto el front-end como el back-end.
+        </p>
       </div>
     </div>
-    <div class="caja-info">
-      <p>
-        +2 años de experiencia utilizando tecnologías de desarrollo full stack,
-        abarcando tanto el front-end como el back-end. Mi objetivo actual es
-        establecerme en el sector tecnológico, poder formar parte de un equipo
-        donde pueda seguir aprendiendo, aportar valor, y resolver problemas
-        reales.
-      </p>
-      <h5>Santiago del estero, Argentina</h5>
-    </div>
+
     <div class="caja-links">
-      <a href="https://www.linkedin.com/in/nahuelbanco/" target="_blank">
-        LinkedIn</a
+      <a href="https://github.com/Nahuel417" target="_blank" class="github">
+        <i class="bi bi-github"></i> GitHub</a
       >
-      <a href="https://github.com/Nahuel417" target="_blank">GitHub</a>
-      <span>+54 3854085427</span>
-      <span>Banconahuel417@gmail.com</span>
+      <a
+        href="https://www.linkedin.com/in/nahuelbanco/"
+        target="_blank"
+        class="linkedIn"
+      >
+        <i class="bi bi-linkedin"></i> LinkedIn</a
+      >
+      <a href="" class="cv">
+        <i class="bi bi-folder-symlink-fill"></i> Descargar CV</a
+      >
     </div>
   </div>
 </Section>
@@ -39,24 +40,7 @@ import Section from "../Section.astro";
   .contenedor-headline {
     display: flex;
     flex-direction: column;
-  }
-
-  .caja-info {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .caja-foto h1 {
-    font-size: 45px;
-  }
-
-  .caja-foto h3 {
-    font-size: 23px;
-    margin: 0 0 25px 0;
-  }
-
-  .caja-info h5 {
-    margin: 10px 0;
+    margin-top: 4rem;
   }
 
   .caja-foto {
@@ -67,26 +51,87 @@ import Section from "../Section.astro";
     gap: 50px;
   }
 
+  .caja-foto h1 {
+    font-size: 44px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-foto h3 {
+    position: relative;
+    font-size: 21px;
+    margin: 0 0 20px 0;
+    top: -5px;
+  }
+
+  .caja-foto figure {
+    width: 45%;
+  }
+
+  .caja-foto img {
+    border-radius: 50%;
+    border: 10px solid #161e2d;
+  }
+
   .caja-links {
     display: flex;
     justify-content: flex-start;
-    margin: 30px 0;
-    gap: 25px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    gap: 5%;
   }
 
-  .caja-links a,
-  .caja-links span {
-    border: 1px solid white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    transition: all 0.4s ease-in-out;
-    background-color: rgba(128, 128, 128, 0.2);
+  .caja-links a.cv {
+    background-color: rgba(35, 135, 68, 0.9);
   }
 
-  .caja-links a:hover,
-  .caja-links span:hover {
+  .caja-links a.linkedIn {
+    background-color: #1452aa;
+  }
+
+  .caja-links a i {
+    margin-right: 5px;
+    transition: all 0.3s;
+  }
+
+  .caja-links a.github {
     background-color: rgba(255, 255, 255, 0.8);
-    transform: translateY(-20%);
-    color: #23262f;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .caja-links a.github i {
+    color: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s;
+  }
+
+  .caja-links a {
+    border: 2px solid rgba(128, 128, 128, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s;
+    -webkit-box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 1);
+    box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 1);
+    margin-top: 30px;
+  }
+
+  .caja-links a.github:hover {
+    color: #000;
+  }
+
+  .caja-links a.github:hover i {
+    color: #000;
+  }
+
+  .caja-links a:hover i {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-links a:hover {
+    transform: translateY(5px);
+    box-shadow: none;
+    color: rgb(255, 255, 255);
   }
 </style>

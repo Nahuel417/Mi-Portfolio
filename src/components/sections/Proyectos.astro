@@ -1,1 +1,127 @@
-<h1>Mis Proyectos</h1>
+---
+import Section from "../Section.astro";
+---
+
+<Section>
+  <div class="contenedor-proyectos">
+    <h1>Proyectos <i class="bi bi-star-half"></i></h1>
+
+    <div class="contenedor-g-tarjetas">
+      <article>
+        <a href="">
+          <div class="tarjeta">
+            <div>
+              <img src="" alt="imagen1" />
+            </div>
+            <div>
+              <h3>titulo</h3>
+              <p>descripcion</p>
+              <span> Skills</span>
+              <span> Skills</span>
+              <span> Skills</span>
+              <span> Skills</span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article>
+        <a href="">
+          <div class="tarjeta">
+            <div>
+              <img src="" alt="imagen2" />
+            </div>
+            <div>
+              <h3>titulo</h3>
+              <p>descripcion</p>
+              <span> Skills</span>
+              <span> Skills</span>
+              <span> Skills</span>
+              <span> Skills</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="contenedor-c-tarjetas">
+      <a href="">
+        <article>
+          <h3>titulo</h3>
+          <p>descripcion</p>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+        </article>
+      </a>
+
+      <a href="">
+        <article>
+          <h3>titulo</h3>
+          <p>descripcion</p>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+        </article>
+      </a>
+
+      <a href="">
+        <article>
+          <h3>titulo</h3>
+          <p>descripcion</p>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+        </article>
+      </a>
+
+      <a href="">
+        <article>
+          <h3>titulo</h3>
+          <p>descripcion</p>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+          <span> Skills</span>
+        </article>
+      </a>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .contenedor-proyectos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenedor-proyectos h1 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contenedor-proyectos i {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contenedor-g-tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .contenedor-g-tarjetas article {
+    border: 1px solid;
+  }
+
+  .tarjeta {
+    display: flex;
+    gap: 10%;
+    padding: 20px;
+  }
+</style>
