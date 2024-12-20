@@ -1,0 +1,93 @@
+---
+interface Props {
+  titulo?: string;
+  img?: string;
+  descripcion?: string;
+  skills?: string[];
+  deploy?: string;
+  code?: string;
+}
+
+const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
+---
+
+<article>
+  <div class="tarjeta">
+    <div class="caja-img">
+      <img src={img} alt="handyPro" />
+    </div>
+    <div class="caja-info">
+      <h2>{titulo}</h2>
+      <p>{descripcion}</p>
+      <div class="caja-skills">
+        {skills?.map((skill) => <span>{skill}</span>)}
+      </div>
+      <div class="caja-boton-deploy">
+        <a href={deploy} target="_blank"
+          >Enlace <i class="bi bi-browser-chrome"></i></a
+        >
+        <a href={code} target="_blank"
+          >Code <i class="bi bi-terminal-fill"></i></a
+        >
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    /* border: 1px solid;
+    border-radius: 8px; */
+  }
+
+  .tarjeta {
+    display: flex;
+    gap: 10%;
+    align-items: center;
+  }
+
+  .caja-img {
+    width: 1100px;
+    height: 210px;
+  }
+
+  .caja-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .caja-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .caja-info h2 {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-info p {
+    color: rgba(203, 213, 225, 0.6);
+  }
+
+  .caja-boton-deploy {
+    display: flex;
+    gap: 10px;
+  }
+
+  .caja-boton-deploy a {
+    color: black;
+    background-color: #fff;
+    padding: 10px 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .caja-boton-deploy a i {
+    color: black;
+    margin-left: 5px;
+    font-size: 17px;
+  }
+</style>

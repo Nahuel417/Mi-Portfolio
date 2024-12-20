@@ -1,59 +1,54 @@
 ---
+import ArticleTarjetasGrandes from "../ArticleTarjetasGrandes.astro";
 import Section from "../Section.astro";
+
+const propsTarjetasGrandes = [
+  {
+    titulo: "HandyPro",
+    img: "/proyectos/handyPro.webp",
+    descripcion:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe voluptatum nemo nulla. Sit, pariatur? Asperiores consequatur",
+    skills: ["skill1", "skill2", "skill3", "skill4"],
+    deploy: "https://www.youtube.com/watch?v=IgABM_Klb1o",
+    code: "https://github.com/Nahuel417/handypro-back",
+  },
+  {
+    titulo: "PadelSport",
+    img: "/proyectos/padelSport.webp",
+    descripcion:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe voluptatum nemo nulla. Sit, pariatur? Asperiores consequatur",
+    skills: ["skill1", "skill2", "skill3", "skill4"],
+    deploy: "https://youtu.be/EkI8Z0UtpQE",
+    code: "https://github.com/Nahuel417/PadelSport",
+  },
+];
 ---
 
 <Section>
   <div class="contenedor-proyectos">
-    <h1>Proyectos <i class="bi bi-star-half"></i></h1>
-
+    <div class="titulo">
+      <h1>Proyectos</h1>
+      <i class="bi bi-terminal"></i>
+    </div>
+    <!-- <i class="bi bi-star-half"></i> -->
     <div class="contenedor-grande-tarjetas">
-      <article>
-        <div class="tarjeta">
-          <div>
-            <img src="" alt="imagen1" />
-          </div>
-          <div class="caja-info">
-            <h2>HandyPro</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-              asperiores, veniam autem id ea unde quaerat explicabo inventore
-            </p>
-            <div class="caja-skills">
-              <span> Skills</span>
-              <span> Skills</span>
-              <span> Skills</span>
-              <span> Skills</span>
-            </div>
-            <div class="caja-boton-deploy">
-              <a href="">Deploy</a>
-            </div>
-          </div>
-        </div>
-      </article>
+      <ArticleTarjetasGrandes
+        titulo={propsTarjetasGrandes[0].titulo}
+        img={propsTarjetasGrandes[0].img}
+        descripcion={propsTarjetasGrandes[0].descripcion}
+        skills={propsTarjetasGrandes[0].skills}
+        deploy={propsTarjetasGrandes[0].deploy}
+        code={propsTarjetasGrandes[0].code}
+      />
 
-      <article>
-        <div class="tarjeta">
-          <div>
-            <img src="" alt="imagen2" />
-          </div>
-          <div class="caja-info">
-            <h2>InnovatechShop</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-              saepe voluptatum nemo nulla. Sit, pariatur? Asperiores consequatur
-            </p>
-            <div class="caja-skills">
-              <span> Skills</span>
-              <span> Skills</span>
-              <span> Skills</span>
-              <span> Skills</span>
-            </div>
-            <div class="caja-boton-deploy">
-              <a href="">Deploy</a>
-            </div>
-          </div>
-        </div>
-      </article>
+      <ArticleTarjetasGrandes
+        titulo={propsTarjetasGrandes[1].titulo}
+        img={propsTarjetasGrandes[1].img}
+        descripcion={propsTarjetasGrandes[1].descripcion}
+        skills={propsTarjetasGrandes[1].skills}
+        deploy={propsTarjetasGrandes[1].deploy}
+        code={propsTarjetasGrandes[1].code}
+      />
     </div>
 
     <div class="contenedor-chico-tarjetas">
@@ -110,15 +105,23 @@ import Section from "../Section.astro";
     flex-direction: column;
   }
 
-  .contenedor-proyectos h1 {
+  .titulo {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .titulo h1 {
     margin-bottom: 20px;
     font-size: 30px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .contenedor-proyectos i {
+  .titulo i {
     color: rgba(255, 255, 255, 0.9);
+    margin-left: 5px;
+    font-size: 35px;
   }
 
   .contenedor-grande-tarjetas {
@@ -126,26 +129,6 @@ import Section from "../Section.astro";
     flex-direction: column;
     gap: 30px;
     margin-bottom: 30px;
-  }
-
-  .contenedor-grande-tarjetas article {
-    border: 1px solid;
-  }
-
-  .caja-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .caja-info h2 {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .tarjeta {
-    display: flex;
-    gap: 10%;
-    padding: 20px;
   }
 
   .contenedor-chico-tarjetas {
