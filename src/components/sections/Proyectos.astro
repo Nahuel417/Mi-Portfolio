@@ -5,7 +5,11 @@ import Section from "../Section.astro";
 const propsTarjetasGrandes = [
   {
     titulo: "HandyPro",
-    img: "/proyectos/handyPro.webp",
+    img: [
+      "/proyectos/handyPro1.webp",
+      "/proyectos/handyPro2.webp",
+      "/proyectos/handyPro3.webp",
+    ],
     descripcion:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe voluptatum nemo nulla. Sit, pariatur? Asperiores consequatur",
     skills: ["skill1", "skill2", "skill3", "skill4"],
@@ -14,7 +18,11 @@ const propsTarjetasGrandes = [
   },
   {
     titulo: "PadelSport",
-    img: "/proyectos/padelSport.webp",
+    img: [
+      "/proyectos/padelSport1.webp",
+      "/proyectos/padelSport2.webp",
+      "/proyectos/padelSport3.webp",
+    ],
     descripcion:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia saepe voluptatum nemo nulla. Sit, pariatur? Asperiores consequatur",
     skills: ["skill1", "skill2", "skill3", "skill4"],
@@ -30,7 +38,7 @@ const propsTarjetasGrandes = [
       <h1>Proyectos</h1>
       <i class="bi bi-terminal"></i>
     </div>
-    <!-- <i class="bi bi-star-half"></i> -->
+
     <div class="contenedor-grande-tarjetas">
       <ArticleTarjetasGrandes
         titulo={propsTarjetasGrandes[0].titulo}

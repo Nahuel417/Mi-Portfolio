@@ -1,7 +1,7 @@
 ---
 interface Props {
   titulo?: string;
-  img?: string;
+  img?: string[];
   descripcion?: string;
   skills?: string[];
   deploy?: string;
@@ -14,8 +14,24 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
 <article>
   <div class="tarjeta">
     <div class="caja-img">
-      <img src={img} alt="handyPro" />
+      <!-- <img src={img} alt="handyPro" /> -->
+
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {
+            img?.map((imagen) => (
+              <div class="swiper-slide">
+                <img src={imagen} alt="" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
+
     <div class="caja-info">
       <h2>{titulo}</h2>
       <p>{descripcion}</p>
@@ -32,14 +48,21 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
       </div>
     </div>
   </div>
+
+  <script type="module">
+    import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: false,
+      effect: "cards",
+      perSlideOffset: 3,
+    });
+  </script>
 </article>
 
 <style>
-  article {
-    /* border: 1px solid;
-    border-radius: 8px; */
-  }
-
   .tarjeta {
     display: flex;
     gap: 10%;
@@ -47,8 +70,8 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
   }
 
   .caja-img {
-    width: 1100px;
-    height: 210px;
+    width: 350px;
+    height: 250px;
   }
 
   .caja-img img {
@@ -89,5 +112,16 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
     color: black;
     margin-left: 5px;
     font-size: 17px;
+  }
+
+  /* .caja-boton-deploy a:hover,
+  .caja-boton-deploy a:hover i {
+    background-color: black;
+    color: #fff;
+  } */
+
+  .swiper {
+    width: 100%;
+    height: 100%;
   }
 </style>

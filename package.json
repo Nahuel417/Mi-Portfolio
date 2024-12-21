@@ -12,6 +12,7 @@
     "astro": "^5.0.5",
     "bootstrap-icons": "^1.11.3",
     "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "swiper": "^11.1.15"
   }
 }
