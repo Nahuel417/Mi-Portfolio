@@ -1,4 +1,17 @@
 ---
+import Javascript from "./svgs/JS.astro";
+import TypeScript from "./svgs/TS.astro";
+import PostgreSQL from "./svgs/Postgres.astro";
+import NestJS from "./svgs/Nest.astro";
+import Stripe from "./svgs/Stripe.astro";
+import Docker from "./svgs/Docker.astro";
+import JWT from "./svgs/JWT.astro";
+import React from "./svgs/React.astro";
+import ReactRouter from "./svgs/ReactRouter.astro";
+import Vite from "./svgs/Vite.astro";
+import Bootstrap from "./svgs/Bootstrap.astro";
+import TypeORM from "./svgs/TypeORM.astro";
+
 interface Props {
   titulo?: string;
   img?: string[];
@@ -14,8 +27,6 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
 <article>
   <div class="tarjeta">
     <div class="caja-img">
-      <!-- <img src={img} alt="handyPro" /> -->
-
       <!-- Slider main container -->
       <div class="swiper">
         <!-- Additional required wrapper -->
@@ -36,15 +47,46 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
       <h2>{titulo}</h2>
       <p>{descripcion}</p>
       <div class="caja-skills">
-        {skills?.map((skill) => <span>{skill}</span>)}
+        <!-- {skills?.map((skill) => <span>{skill}</span>)} -->
+        {
+          skills?.map((skill) =>
+            skill === "JavaScript" ? (
+              <Javascript />
+            ) : skill === "TypeScript" ? (
+              <TypeScript />
+            ) : skill === "NestJs" ? (
+              <NestJS />
+            ) : skill === "PostgresDB" ? (
+              <PostgreSQL />
+            ) : skill === "Stripe" ? (
+              <Stripe />
+            ) : skill === "Docker" ? (
+              <Docker />
+            ) : skill === "JWT" ? (
+              <JWT />
+            ) : skill === "ReactJS" ? (
+              <React />
+            ) : skill === "ReactRouter" ? (
+              <ReactRouter />
+            ) : skill === "Vite" ? (
+              <Vite />
+            ) : skill === "Bootstrap" ? (
+              <Bootstrap />
+            ) : skill === "TypeORM" ? (
+              <TypeORM />
+            ) : (
+              ""
+            ),
+          )
+        }
       </div>
       <div class="caja-boton-deploy">
-        <a href={deploy} target="_blank"
-          >Enlace <i class="bi bi-browser-chrome"></i></a
-        >
-        <a href={code} target="_blank"
-          >Code <i class="bi bi-terminal-fill"></i></a
-        >
+        <a href={code} target="_blank">
+          Code <i class="bi bi-terminal-fill"></i>
+        </a>
+        <a href={deploy} target="_blank">
+          Enlace <i class="bi bi-browser-chrome google"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -57,71 +99,103 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
       direction: "horizontal",
       loop: false,
       effect: "cards",
-      perSlideOffset: 3,
+      perSlideOffset: 8,
     });
   </script>
+
+  <style>
+    .tarjeta {
+      display: flex;
+      gap: 10%;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+    .swiper-slide {
+      border-radius: 8px;
+    }
+
+    .caja-img {
+      width: 350px;
+      height: 250px;
+      border-radius: 8px;
+    }
+
+    .caja-img img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      transition: all 0.5s;
+    }
+
+    .tarjeta .caja-img:hover img {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .caja-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
+
+    .caja-info h2 {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .caja-info p {
+      color: rgba(203, 213, 225, 0.6);
+    }
+
+    .caja-skills {
+      display: flex;
+      gap: 8px;
+    }
+
+    .caja-boton-deploy {
+      display: flex;
+      gap: 20px;
+      margin-top: 5px;
+    }
+
+    .caja-boton-deploy a {
+      color: rgba(22, 30, 45, 0.8);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 16px;
+      text-align: center;
+      border-radius: 8px;
+      transition: all 0.3s;
+      -webkit-box-shadow: 7px 7px 0px 0px #404c61;
+      -moz-box-shadow: 7px 7px 0px 0px #404c61;
+      box-shadow: 7px 7px 0px 0px #404c61;
+    }
+
+    .caja-boton-deploy a i {
+      color: rgba(22, 30, 45, 0.8);
+      margin-right: 5px;
+      font-size: 17px;
+      transition: all 0.3s;
+    }
+
+    .caja-boton-deploy a:hover {
+      color: #161e2d;
+      transform: translateY(5px);
+      box-shadow: none;
+    }
+
+    .caja-boton-deploy a:hover i {
+      color: #161e2d;
+    }
+
+    .caja-boton-deploy a:hover i.google {
+      /* transform: rotate(20deg); */
+      margin-left: 10px;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </article>
-
-<style>
-  .tarjeta {
-    display: flex;
-    gap: 10%;
-    align-items: center;
-  }
-
-  .caja-img {
-    width: 350px;
-    height: 250px;
-  }
-
-  .caja-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
-
-  .caja-info {
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-    margin-bottom: 15px;
-  }
-
-  .caja-info h2 {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .caja-info p {
-    color: rgba(203, 213, 225, 0.6);
-  }
-
-  .caja-boton-deploy {
-    display: flex;
-    gap: 10px;
-  }
-
-  .caja-boton-deploy a {
-    color: black;
-    background-color: #fff;
-    padding: 10px 16px;
-    text-align: center;
-    border-radius: 8px;
-  }
-  .caja-boton-deploy a i {
-    color: black;
-    margin-left: 5px;
-    font-size: 17px;
-  }
-
-  /* .caja-boton-deploy a:hover,
-  .caja-boton-deploy a:hover i {
-    background-color: black;
-    color: #fff;
-  } */
-
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
-</style>
