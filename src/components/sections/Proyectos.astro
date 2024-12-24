@@ -1,4 +1,5 @@
 ---
+import ArticleTarjetasChicas from "../ArticleTarjetasChicas.astro";
 import ArticleTarjetasGrandes from "../ArticleTarjetasGrandes.astro";
 import Section from "../Section.astro";
 
@@ -20,7 +21,7 @@ const propsTarjetasGrandes = [
       "PostgresDB",
       "TypeORM",
       "Stripe",
-      "Docker",
+      "AWS",
       "JWT",
     ],
     deploy: "https://www.youtube.com/watch?v=IgABM_Klb1o",
@@ -48,6 +49,39 @@ const propsTarjetasGrandes = [
     ],
     deploy: "https://youtu.be/EkI8Z0UtpQE",
     code: "https://github.com/Nahuel417/PadelSport",
+  },
+];
+
+const propsTarjetasChicas = [
+  {
+    titulo: "E-commerce API",
+    descripcion: "asd",
+    skills: [
+      "TypeScript",
+      "NestJs",
+      "PostgresDB",
+      "Docker",
+      "Cloudinary",
+      "JWT",
+      "Swagger",
+    ],
+    code: "https://github.com/Nahuel417/E-commerce-Api",
+    deploy: "https://ecommerce-api-mbho.onrender.com/api",
+  },
+  {
+    titulo: "InnovatechShop",
+    descripcion: "asd",
+    skills: [
+      "JavaScript",
+      "ReactJS",
+      "Vite",
+      "MySQL",
+      "Bootstrap",
+      "Sequelize",
+      "Express",
+    ],
+    code: "https://github.com/Nahuel417/InnovatechShop",
+    deploy: "",
   },
 ];
 ---
@@ -80,49 +114,21 @@ const propsTarjetasGrandes = [
     </div>
 
     <div class="contenedor-chico-tarjetas">
-      <article>
-        <h2>titulo</h2>
-        <p>descripcion</p>
-        <div class="caja-skills-2">
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-        </div>
-      </article>
+      <ArticleTarjetasChicas
+        titulo={propsTarjetasChicas[0].titulo}
+        descripcion={propsTarjetasChicas[0].descripcion}
+        skills={propsTarjetasChicas[0].skills}
+        deploy={propsTarjetasChicas[0].deploy}
+        code={propsTarjetasChicas[0].code}
+      />
 
-      <article>
-        <h2>titulo</h2>
-        <p>descripcion</p>
-        <div class="caja-skills-2">
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-        </div>
-      </article>
-
-      <!-- <article>
-        <h2>titulo</h2>
-        <p>descripcion</p>
-        <div class="caja-skills-2">
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-        </div>
-      </article>
-
-      <article>
-        <h2>titulo</h2>
-        <p>descripcion</p>
-        <div class="caja-skills-2">
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-          <span> Skills</span>
-        </div>
-      </article> -->
+      <ArticleTarjetasChicas
+        titulo={propsTarjetasChicas[1].titulo}
+        descripcion={propsTarjetasChicas[1].descripcion}
+        skills={propsTarjetasChicas[1].skills}
+        deploy={propsTarjetasChicas[1].deploy}
+        code={propsTarjetasChicas[1].code}
+      />
     </div>
   </div>
 </Section>
@@ -164,17 +170,5 @@ const propsTarjetasGrandes = [
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 25px;
-  }
-
-  .contenedor-chico-tarjetas article {
-    width: 47%;
-    /* margin-bottom: 25px; */
-    border: 1px solid;
-    padding: 30px;
-    border-radius: 10px;
-  }
-
-  .contenedor-chico-tarjetas article h2 {
-    color: rgba(255, 255, 255, 0.9);
   }
 </style>

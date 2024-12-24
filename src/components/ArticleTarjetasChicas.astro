@@ -1,0 +1,99 @@
+---
+import Javascript from "./svgs/JS.astro";
+import TypeScript from "./svgs/TS.astro";
+import PostgreSQL from "./svgs/Postgres.astro";
+import NestJS from "./svgs/Nest.astro";
+import Stripe from "./svgs/Stripe.astro";
+import Docker from "./svgs/Docker.astro";
+import JWT from "./svgs/JWT.astro";
+import React from "./svgs/React.astro";
+import ReactRouter from "./svgs/ReactRouter.astro";
+import Vite from "./svgs/Vite.astro";
+import Bootstrap from "./svgs/Bootstrap.astro";
+import TypeORM from "./svgs/TypeORM.astro";
+import AWS from "./svgs/AWS.astro";
+import Swagger from "./svgs/Swagger.astro";
+import Cloudinary from "./svgs/Cloudinary.astro";
+import Express from "./svgs/Express.astro";
+import MySQL from "./svgs/MySQL.astro";
+import Sequelize from "./svgs/Sequelize.astro";
+
+interface Props {
+  titulo?: string;
+  descripcion?: string;
+  skills?: string[];
+  deploy?: string;
+  code?: string;
+}
+
+const { titulo, descripcion, skills, deploy, code } = Astro.props;
+---
+
+<article>
+  <h2>{titulo}</h2>
+  <p>{descripcion}</p>
+  <div class="caja-skills-2">
+    {
+      skills?.map((skill) =>
+        skill === "JavaScript" ? (
+          <Javascript />
+        ) : skill === "TypeScript" ? (
+          <TypeScript />
+        ) : skill === "NestJs" ? (
+          <NestJS />
+        ) : skill === "PostgresDB" ? (
+          <PostgreSQL />
+        ) : skill === "Stripe" ? (
+          <Stripe />
+        ) : skill === "Docker" ? (
+          <Docker />
+        ) : skill === "JWT" ? (
+          <JWT />
+        ) : skill === "ReactJS" ? (
+          <React />
+        ) : skill === "ReactRouter" ? (
+          <ReactRouter />
+        ) : skill === "Vite" ? (
+          <Vite />
+        ) : skill === "Bootstrap" ? (
+          <Bootstrap />
+        ) : skill === "TypeORM" ? (
+          <TypeORM />
+        ) : skill === "AWS" ? (
+          <AWS />
+        ) : skill === "Cloudinary" ? (
+          <Cloudinary />
+        ) : skill === "Swagger" ? (
+          <Swagger />
+        ) : skill === "Express" ? (
+          <Express />
+        ) : skill === "MySQL" ? (
+          <MySQL />
+        ) : skill === "Sequelize" ? (
+          <Sequelize />
+        ) : (
+          ""
+        ),
+      )
+    }
+  </div>
+  <div class="caja-enlaces">
+    <a href={code} target="_blank"><i class="bi bi-terminal-fill"></i> </a>
+    <a href={deploy} target="_blank"
+      ><i class="bi bi-browser-chrome google"></i>
+    </a>
+  </div>
+</article>
+
+<style>
+  article {
+    width: 47%;
+    border: 1px solid;
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  article h2 {
+    color: rgba(255, 255, 255, 0.9);
+  }
+</style>

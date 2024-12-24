@@ -11,6 +11,7 @@ import ReactRouter from "./svgs/ReactRouter.astro";
 import Vite from "./svgs/Vite.astro";
 import Bootstrap from "./svgs/Bootstrap.astro";
 import TypeORM from "./svgs/TypeORM.astro";
+import AWS from "./svgs/AWS.astro";
 
 interface Props {
   titulo?: string;
@@ -47,7 +48,6 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
       <h2>{titulo}</h2>
       <p>{descripcion}</p>
       <div class="caja-skills">
-        <!-- {skills?.map((skill) => <span>{skill}</span>)} -->
         {
           skills?.map((skill) =>
             skill === "JavaScript" ? (
@@ -74,6 +74,8 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
               <Bootstrap />
             ) : skill === "TypeORM" ? (
               <TypeORM />
+            ) : skill === "AWS" ? (
+              <AWS />
             ) : (
               ""
             ),
