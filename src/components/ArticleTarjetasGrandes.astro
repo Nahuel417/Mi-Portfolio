@@ -14,15 +14,18 @@ import TypeORM from "./svgs/TypeORM.astro";
 import AWS from "./svgs/AWS.astro";
 
 interface Props {
+  key?: number;
   titulo?: string;
   img?: string[];
   descripcion?: string;
   skills?: string[];
   deploy?: string;
   code?: string;
+  desarrollo?: string;
 }
 
-const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
+const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
+  Astro.props;
 ---
 
 <article>
@@ -45,7 +48,10 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
     </div>
 
     <div class="caja-info">
-      <h2>{titulo}</h2>
+      <div class="caja-titulo">
+        <h2>{titulo}</h2>
+        <h5>{desarrollo}</h5>
+      </div>
       <p>{descripcion}</p>
       <div class="caja-skills">
         {
@@ -142,8 +148,20 @@ const { titulo, img, descripcion, skills, deploy, code } = Astro.props;
       margin-bottom: 15px;
     }
 
-    .caja-info h2 {
+    .caja-titulo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .caja-titulo h2 {
       color: rgba(255, 255, 255, 0.9);
+    }
+
+    .caja-titulo h5 {
+      background-color: #404c61;
+      border-radius: 5px;
+      padding: 4px 8px;
     }
 
     .caja-info p {

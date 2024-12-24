@@ -19,14 +19,16 @@ import MySQL from "./svgs/MySQL.astro";
 import Sequelize from "./svgs/Sequelize.astro";
 
 interface Props {
+  key?: number;
   titulo?: string;
   descripcion?: string;
   skills?: string[];
   deploy?: string;
   code?: string;
+  desarrollo?: string;
 }
 
-const { titulo, descripcion, skills, deploy, code } = Astro.props;
+const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
 ---
 
 <article>
@@ -87,13 +89,57 @@ const { titulo, descripcion, skills, deploy, code } = Astro.props;
 
 <style>
   article {
+    display: flex;
+    flex-direction: column;
     width: 47%;
-    border: 1px solid;
-    padding: 30px;
+    border: 2px solid rgba(203, 213, 225, 0.2);
+    padding: 30px 20px 15px 30px;
     border-radius: 10px;
+    gap: 15px;
+    transition: all 0.3s;
   }
 
   article h2 {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  article:hover {
+    transform: translateY(-8px);
+    border-color: rgba(203, 213, 225, 0.7);
+    cursor: default;
+  }
+
+  article:hover h2 {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .caja-skills-2 {
+    display: flex;
+    gap: 8px;
+  }
+
+  .caja-enlaces {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 20px;
+  }
+
+  .caja-enlaces a {
+    transition: all 0.4s;
+  }
+
+  .caja-enlaces a:hover {
+    transform: translateY(-5px);
+  }
+
+  .caja-enlaces a i {
+    font-size: 20px;
+    color: transparent;
+    transition: all 0.2s;
+  }
+
+  article:hover a i {
+    color: #d1d7e0;
   }
 </style>

@@ -26,9 +26,10 @@ const propsTarjetasGrandes = [
     ],
     deploy: "https://www.youtube.com/watch?v=IgABM_Klb1o",
     code: "https://github.com/Nahuel417/handypro-back",
+    desarrollo: "Backend",
   },
   {
-    titulo: "PadelSport",
+    titulo: "PadelSport ",
     img: [
       "/proyectos/padelSport1.webp",
       "/proyectos/padelSport2.webp",
@@ -43,19 +44,21 @@ const propsTarjetasGrandes = [
       "ReactJS",
       "PostgresDB",
       "TypeORM",
-      "ReactRouter",
       "Bootstrap",
+      "ReactRouter",
       "Vite",
     ],
     deploy: "https://youtu.be/EkI8Z0UtpQE",
     code: "https://github.com/Nahuel417/PadelSport",
+    desarrollo: "Fullstack",
   },
 ];
 
 const propsTarjetasChicas = [
   {
     titulo: "E-commerce API",
-    descripcion: "asd",
+    descripcion:
+      "E-commerce de tecnología para jóvenes y adultos, diseñado para ser intuitivo y atractivo.",
     skills: [
       "TypeScript",
       "NestJs",
@@ -67,21 +70,24 @@ const propsTarjetasChicas = [
     ],
     code: "https://github.com/Nahuel417/E-commerce-Api",
     deploy: "https://ecommerce-api-mbho.onrender.com/api",
+    desarrollo: "Backend",
   },
   {
     titulo: "InnovatechShop",
-    descripcion: "asd",
+    descripcion:
+      "API para e-commerce, abarca la gestión de productos, autenticación de usuarios y manejo de pedidos.",
     skills: [
       "JavaScript",
       "ReactJS",
       "Vite",
       "MySQL",
       "Bootstrap",
-      "Sequelize",
       "Express",
+      "Sequelize",
     ],
     code: "https://github.com/Nahuel417/InnovatechShop",
     deploy: "",
+    desarrollo: "Fullstack",
   },
 ];
 ---
@@ -94,41 +100,36 @@ const propsTarjetasChicas = [
     </div>
 
     <div class="contenedor-grande-tarjetas">
-      <ArticleTarjetasGrandes
-        titulo={propsTarjetasGrandes[0].titulo}
-        img={propsTarjetasGrandes[0].img}
-        descripcion={propsTarjetasGrandes[0].descripcion}
-        skills={propsTarjetasGrandes[0].skills}
-        deploy={propsTarjetasGrandes[0].deploy}
-        code={propsTarjetasGrandes[0].code}
-      />
-
-      <ArticleTarjetasGrandes
-        titulo={propsTarjetasGrandes[1].titulo}
-        img={propsTarjetasGrandes[1].img}
-        descripcion={propsTarjetasGrandes[1].descripcion}
-        skills={propsTarjetasGrandes[1].skills}
-        deploy={propsTarjetasGrandes[1].deploy}
-        code={propsTarjetasGrandes[1].code}
-      />
+      {
+        propsTarjetasGrandes.map((tarjeta, i) => (
+          <ArticleTarjetasGrandes
+            key={i}
+            titulo={tarjeta.titulo}
+            img={tarjeta.img}
+            descripcion={tarjeta.descripcion}
+            skills={tarjeta.skills}
+            deploy={tarjeta.deploy}
+            code={tarjeta.code}
+            desarrollo={tarjeta.desarrollo}
+          />
+        ))
+      }
     </div>
 
     <div class="contenedor-chico-tarjetas">
-      <ArticleTarjetasChicas
-        titulo={propsTarjetasChicas[0].titulo}
-        descripcion={propsTarjetasChicas[0].descripcion}
-        skills={propsTarjetasChicas[0].skills}
-        deploy={propsTarjetasChicas[0].deploy}
-        code={propsTarjetasChicas[0].code}
-      />
-
-      <ArticleTarjetasChicas
-        titulo={propsTarjetasChicas[1].titulo}
-        descripcion={propsTarjetasChicas[1].descripcion}
-        skills={propsTarjetasChicas[1].skills}
-        deploy={propsTarjetasChicas[1].deploy}
-        code={propsTarjetasChicas[1].code}
-      />
+      {
+        propsTarjetasChicas.map((tarjeta, i) => (
+          <ArticleTarjetasChicas
+            key={i}
+            titulo={tarjeta.titulo}
+            descripcion={tarjeta.descripcion}
+            skills={tarjeta.skills}
+            deploy={tarjeta.deploy}
+            code={tarjeta.code}
+            desarrollo={tarjeta.desarrollo}
+          />
+        ))
+      }
     </div>
   </div>
 </Section>
@@ -169,6 +170,5 @@ const propsTarjetasChicas = [
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 25px;
   }
 </style>
