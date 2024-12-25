@@ -32,7 +32,10 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
 ---
 
 <article>
-  <h2>{titulo}</h2>
+  <div class="caja-titulo">
+    <h2>{titulo}</h2>
+    <h5>{desarrollo}</h5>
+  </div>
   <p>{descripcion}</p>
   <div class="caja-skills-2">
     {
@@ -99,17 +102,30 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     transition: all 0.3s;
   }
 
-  article h2 {
+  .caja-titulo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .caja-titulo h2 {
     color: rgba(255, 255, 255, 0.7);
   }
 
+  .caja-titulo h5 {
+    border: 2px solid rgba(99, 101, 241, 0.6);
+    border-radius: 30px;
+    padding: 0px 8px;
+  }
+
   article:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: rgba(203, 213, 225, 0.7);
     cursor: default;
   }
 
-  article:hover h2 {
+  article:hover .caja-titulo h2 {
     color: rgba(255, 255, 255, 1);
   }
 
@@ -121,8 +137,11 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   .caja-enlaces {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
     gap: 20px;
+  }
+
+  article:hover a i {
+    color: rgba(209, 215, 224, 0.6);
   }
 
   .caja-enlaces a {
@@ -130,16 +149,16 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   }
 
   .caja-enlaces a:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+  }
+
+  .caja-enlaces a:hover i {
+    color: white;
   }
 
   .caja-enlaces a i {
     font-size: 20px;
     color: transparent;
     transition: all 0.2s;
-  }
-
-  article:hover a i {
-    color: #d1d7e0;
   }
 </style>
