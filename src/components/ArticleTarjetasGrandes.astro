@@ -31,23 +31,7 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
 <article>
   <div class="tarjeta">
     <div class="caja-img">
-      <!-- Slider main container -->
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          {
-            img?.map((imagen) => (
-              <div class="swiper-slide">
-                <img src={imagen} alt="" />
-              </div>
-            ))
-          }
-        </div>
-
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
+      {img?.map((imagen) => <img src={imagen} alt="" />)}
     </div>
 
     <div class="caja-info">
@@ -90,6 +74,9 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
             ),
           )
         }
+        <span class="puntos-suspensivos">...</span><a href={"#" + titulo}>
+          <i class="bi bi-plus-circle-fill"></i>
+        </a>
       </div>
       <div class="caja-boton-deploy">
         <a href={code} target="_blank">
@@ -101,130 +88,131 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
       </div>
     </div>
   </div>
-
-  <script type="module">
-    import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-
-    const swiper = new Swiper(".swiper", {
-      // Optional parameters
-      direction: "horizontal",
-      loop: false,
-      effect: "cards",
-      perSlideOffset: 8,
-
-      // If we need pagination
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
-
-  <style>
-    .tarjeta {
-      display: flex;
-      gap: 10%;
-      align-items: center;
-      border-radius: 8px;
-    }
-
-    .swiper-slide {
-      border-radius: 8px;
-    }
-
-    .caja-img {
-      width: 350px;
-      height: 250px;
-      border-radius: 8px;
-    }
-
-    .caja-img img {
-      width: 100%;
-      height: 100%;
-      border-radius: 8px;
-      transition: all 0.5s;
-    }
-
-    .tarjeta .caja-img:hover img {
-      transform: scale(1.1);
-      cursor: pointer;
-    }
-
-    .caja-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 15px;
-    }
-
-    .caja-titulo {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .caja-titulo h2 {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .caja-titulo h5 {
-      border: 2px solid rgba(99, 101, 241, 0.6);
-      border-radius: 30px;
-      padding: 0px 8px;
-    }
-
-    .caja-info p {
-      color: rgba(203, 213, 225, 0.6);
-    }
-
-    .caja-skills {
-      display: flex;
-      gap: 8px;
-    }
-
-    .caja-boton-deploy {
-      display: flex;
-      gap: 20px;
-      margin-top: 5px;
-    }
-
-    .caja-boton-deploy a {
-      color: rgba(22, 30, 45, 0.8);
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px 16px;
-      text-align: center;
-      border-radius: 8px;
-      transition: all 0.3s;
-      -webkit-box-shadow: 7px 7px 0px 0px #404c61;
-      -moz-box-shadow: 7px 7px 0px 0px #404c61;
-      box-shadow: 7px 7px 0px 0px #404c61;
-    }
-
-    .caja-boton-deploy a i {
-      color: rgba(22, 30, 45, 0.8);
-      margin-right: 5px;
-      font-size: 17px;
-      transition: all 0.3s;
-    }
-
-    .caja-boton-deploy a:hover {
-      color: #161e2d;
-      transform: translateY(5px);
-      box-shadow: none;
-    }
-
-    .caja-boton-deploy a:hover i {
-      color: #161e2d;
-    }
-
-    .caja-boton-deploy a:hover i.google {
-      margin-left: 10px;
-    }
-
-    .swiper {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
 </article>
+
+<style>
+  .tarjeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 250px;
+  }
+
+  .swiper-slide {
+    border-radius: 8px;
+  }
+
+  .caja-img {
+    width: 47%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .caja-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: all 0.5s;
+  }
+
+  .caja-img:hover img {
+    transform: translateX(-14px) translateY(-14px);
+    -webkit-box-shadow: 14px 14px 0px 0px #404c61;
+    -moz-box-shadow: 14px 14px 0px 0px #404c61;
+    box-shadow: 14px 14px 0px 0px #404c61;
+  }
+
+  .caja-info {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .caja-titulo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .caja-titulo h2 {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-titulo h5 {
+    border: 2px solid rgba(99, 101, 241, 0.6);
+    border-radius: 30px;
+    padding: 0px 8px;
+  }
+
+  .caja-info p {
+    color: rgba(203, 213, 225, 0.6);
+  }
+
+  .caja-skills {
+    display: flex;
+    gap: 8px;
+  }
+
+  .caja-skills span.puntos-suspensivos {
+    position: relative;
+    top: 6px;
+    right: 7px;
+  }
+
+  .caja-skills i {
+    font-size: 22px;
+    color: #404c61;
+    transition: all 0.5s;
+  }
+
+  .caja-skills a:hover i {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .caja-boton-deploy {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+  }
+
+  .caja-boton-deploy a {
+    color: rgba(22, 30, 45, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 16px;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s;
+    -webkit-box-shadow: 7px 7px 0px 0px #404c61;
+    -moz-box-shadow: 7px 7px 0px 0px #404c61;
+    box-shadow: 7px 7px 0px 0px #404c61;
+  }
+
+  .caja-boton-deploy a i {
+    color: rgba(22, 30, 45, 0.8);
+    margin-right: 5px;
+    font-size: 17px;
+    transition: all 0.3s;
+  }
+
+  .caja-boton-deploy a:hover {
+    color: #161e2d;
+    transform: translateY(5px);
+    box-shadow: none;
+  }
+
+  .caja-boton-deploy a:hover i {
+    color: #161e2d;
+  }
+
+  .caja-boton-deploy a:hover i.google {
+    margin-left: 10px;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+</style>

@@ -33,7 +33,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
 
 <article>
   <div class="caja-titulo">
-    <h2>{titulo}</h2>
+    <h2>{titulo === "E-commerce-api" ? "E-commerce API" : titulo}</h2>
     <h5>{desarrollo}</h5>
   </div>
   <p>{descripcion}</p>
@@ -81,6 +81,9 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
         ),
       )
     }
+    <span class="puntos-suspensivos">...</span><a href={"#" + titulo}>
+      <i class="bi bi-plus-circle-fill more"></i>
+    </a>
   </div>
   <div class="caja-enlaces">
     <a href={code} target="_blank"><i class="bi bi-terminal-fill"></i> </a>
@@ -132,6 +135,26 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   .caja-skills-2 {
     display: flex;
     gap: 8px;
+  }
+
+  .caja-skills-2 span.puntos-suspensivos {
+    position: relative;
+    top: 6px;
+    right: 7px;
+  }
+
+  .caja-skills-2 i.more {
+    font-size: 22px;
+    color: #404c61;
+    transition: all 0.5s;
+  }
+
+  article:hover a i.more {
+    color: #404c61;
+  }
+
+  .caja-skills-2 a:hover i.more {
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .caja-enlaces {
