@@ -1,1 +1,43 @@
-<h1>Educacion <i class="bi bi-mortarboard"></i></h1>
+---
+import Timeline from "../Timeline.astro";
+
+const educacion = [
+  {
+    fecha: "Abril 2024",
+    lugar: "Henry",
+    titulo: "Desarrollador Web Fullstack",
+  },
+  {
+    fecha: "Agosto 2023",
+    lugar: "Digital House",
+    titulo: "Desarrollador Web Fullstack",
+  },
+  {
+    fecha: "Enero 2023",
+    lugar: "Autónomo",
+    titulo: "Desarrollador Web Fullstack",
+  },
+];
+---
+
+<div class="caja-educacion">
+  <h2>Educacion <i class="bi bi-mortarboard"></i></h2>
+
+  <Timeline educacion={educacion} />
+</div>
+
+<style>
+  .caja-educacion {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid;
+  }
+
+  .caja-educacion h2 {
+    font-size: 20px;
+  }
+
+  .caja-timeline {
+    width: 100%;
+  }
+</style>

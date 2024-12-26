@@ -33,7 +33,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
 
 <article>
   <div class="caja-titulo">
-    <h2>{titulo === "E-commerce-api" ? "E-commerce API" : titulo}</h2>
+    <h2>{titulo}</h2>
     <h5>{desarrollo}</h5>
   </div>
   <p>{descripcion}</p>
@@ -81,7 +81,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
         ),
       )
     }
-    <span class="puntos-suspensivos">...</span><a href={"#" + titulo}>
+    <span class="puntos-suspensivos">...</span><a href="#skills">
       <i class="bi bi-plus-circle-fill more"></i>
     </a>
   </div>
@@ -101,7 +101,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     border: 2px solid rgba(203, 213, 225, 0.2);
     padding: 30px 20px 15px 30px;
     border-radius: 10px;
-    gap: 15px;
+    gap: 10px;
     transition: all 0.3s;
   }
 
@@ -114,12 +114,18 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
 
   .caja-titulo h2 {
     color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
   }
 
   .caja-titulo h5 {
     border: 2px solid rgba(99, 101, 241, 0.6);
     border-radius: 30px;
     padding: 0px 8px;
+    font-size: 12px;
+  }
+
+  article p {
+    color: rgba(203, 213, 225, 0.6);
   }
 
   article:hover {
@@ -140,7 +146,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   .caja-skills-2 span.puntos-suspensivos {
     position: relative;
     top: 6px;
-    right: 7px;
+    right: 5px;
   }
 
   .caja-skills-2 i.more {

@@ -1,9 +1,67 @@
 ---
 import Section from "../Section.astro";
+import Educacion from "./Educacion.astro";
 ---
 
-<Section titulo="Sobre mi">
-	<h1>aqui va todo sobre mi</h1>
+<Section>
+  <div class="contenedor-sobreMi">
+    <div class="caja-titulo">
+      <h2>Sobre Mi</h2>
+      <i class="bi bi-person-check"></i>
+    </div>
+
+    <div class="contenedor-info">
+      <Educacion />
+
+      <div class="caja-about">
+        <h2>¿Quien soy? <i class="bi bi-person-lines-fill"></i></h2>
+      </div>
+    </div>
+
+    <div class="contacto">
+      <h4>Email</h4>
+      <span class="email">Banconahuel417@gmail.com</span>
+    </div>
+  </div>
 </Section>
 
-<style></style>
+<style>
+  .caja-titulo {
+    display: flex;
+    gap: 8px;
+  }
+
+  .caja-titulo h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-titulo i {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 5px;
+    font-size: 30px;
+  }
+
+  .contenedor-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 30px;
+  }
+
+  .caja-about {
+    width: 55%;
+    display: flex;
+    border: 1px solid;
+  }
+
+  .caja-about h2 {
+    font-size: 20px;
+  }
+
+  /* .caja-about i {
+    font-size: 25px;
+  } */
+</style>

@@ -74,7 +74,7 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
             ),
           )
         }
-        <span class="puntos-suspensivos">...</span><a href={"#" + titulo}>
+        <span class="puntos-suspensivos">...</span><a href="#skills">
           <i class="bi bi-plus-circle-fill"></i>
         </a>
       </div>
@@ -139,12 +139,14 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
 
   .caja-titulo h2 {
     color: rgba(255, 255, 255, 0.9);
+    font-size: 24px;
   }
 
   .caja-titulo h5 {
     border: 2px solid rgba(99, 101, 241, 0.6);
     border-radius: 30px;
     padding: 0px 8px;
+    font-size: 12px;
   }
 
   .caja-info p {
@@ -159,7 +161,7 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
   .caja-skills span.puntos-suspensivos {
     position: relative;
     top: 6px;
-    right: 7px;
+    right: 5px;
   }
 
   .caja-skills i {
