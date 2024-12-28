@@ -81,7 +81,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
         ),
       )
     }
-    <span class="puntos-suspensivos">...</span><a href="#skills">
+    <a href="#skills">
       <i class="bi bi-plus-circle-fill more"></i>
     </a>
   </div>
@@ -143,12 +143,6 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     gap: 8px;
   }
 
-  .caja-skills-2 span.puntos-suspensivos {
-    position: relative;
-    top: 6px;
-    right: 5px;
-  }
-
   .caja-skills-2 i.more {
     font-size: 22px;
     color: #404c61;
@@ -159,6 +153,10 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     color: #404c61;
   }
 
+  .caja-skills-2 a {
+    margin-left: 10px;
+  }
+
   .caja-skills-2 a:hover i.more {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -167,10 +165,12 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     display: flex;
     justify-content: flex-end;
     gap: 20px;
+    height: 30px;
   }
 
-  article:hover a i {
+  article:hover .caja-enlaces a i {
     color: rgba(209, 215, 224, 0.6);
+    font-size: 20px;
   }
 
   .caja-enlaces a {
@@ -181,13 +181,13 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     transform: translateY(-3px);
   }
 
-  .caja-enlaces a:hover i {
+  article .caja-enlaces a:hover i {
     color: white;
   }
 
   .caja-enlaces a i {
-    font-size: 20px;
+    font-size: 0px;
     color: transparent;
-    transition: all 0.2s;
+    transition: all 0.2s ease-in;
   }
 </style>

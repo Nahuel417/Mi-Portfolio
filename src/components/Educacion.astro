@@ -1,5 +1,5 @@
 ---
-import Timeline from "../Timeline.astro";
+import Timeline from "./Timeline.astro";
 
 const educacion = [
   {
@@ -20,21 +20,26 @@ const educacion = [
 ];
 ---
 
-<div class="caja-educacion">
+<article class="caja-educacion">
   <h2>Educacion <i class="bi bi-mortarboard"></i></h2>
 
   <Timeline educacion={educacion} />
-</div>
+</article>
 
 <style>
   .caja-educacion {
     width: 40%;
     padding: 10px;
-    border: 1px solid;
   }
 
   .caja-educacion h2 {
-    font-size: 20px;
+    font-size: 22px;
+    color: rgba(233, 163, 200, 0.7);
+  }
+
+  .caja-educacion i {
+    margin-left: 5px;
+    color: rgba(233, 163, 200, 0.7);
   }
 
   .caja-timeline {
