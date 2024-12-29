@@ -113,7 +113,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   }
 
   .caja-titulo h2 {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 24px;
   }
 
@@ -129,8 +129,11 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   }
 
   article:hover {
-    transform: translateY(-5px);
     border-color: rgba(203, 213, 225, 0.7);
+    transform: translateX(-14px) translateY(-14px);
+    -webkit-box-shadow: 14px 14px 0px 0px #404c61;
+    -moz-box-shadow: 14px 14px 0px 0px #404c61;
+    box-shadow: 14px 14px 0px 0px #404c61;
     cursor: default;
   }
 
@@ -170,7 +173,6 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
 
   article:hover .caja-enlaces a i {
     color: rgba(209, 215, 224, 0.6);
-    font-size: 20px;
   }
 
   .caja-enlaces a {
@@ -178,7 +180,7 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   }
 
   .caja-enlaces a:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
   }
 
   article .caja-enlaces a:hover i {
@@ -186,8 +188,8 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
   }
 
   .caja-enlaces a i {
-    font-size: 0px;
+    font-size: 20px;
     color: transparent;
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
   }
 </style>

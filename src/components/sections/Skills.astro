@@ -1,1 +1,50 @@
-<h1>Más Skills</h1>
+---
+import Section from "../Section.astro";
+import SkillsFront from "../SkillsFront.astro";
+import SkillsBack from "../SkillsBack.astro";
+import SkillsBD from "../SkillsBD.astro";
+import SkillsSoft from "../SkillsSoft.astro";
+---
+
+<Section>
+  <div class="contenedor-skills">
+    <div class="caja-titulo">
+      <h2>Más Skills</h2>
+      <i class="bi bi-code-slash"></i>
+    </div>
+
+    <div class="contenedor-info">
+      <SkillsFront />
+      <SkillsBack />
+      <SkillsBD />
+      <SkillsSoft />
+    </div>
+  </div>
+</Section>
+
+<style>
+  .caja-titulo {
+    display: flex;
+    gap: 8px;
+  }
+
+  .caja-titulo h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-titulo i {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 5px;
+    font-size: 30px;
+  }
+
+  .contenedor-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+</style>
