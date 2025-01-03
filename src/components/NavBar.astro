@@ -1,5 +1,8 @@
-<div class="contenedor-nav">
-  <h2>Nahuel B</h2>
+<div class="contenedor-nav" id="navBar">
+  <div class="caja-foto">
+    <img src="/fotoDePerfil.jpeg" alt="foto-perfil" width="40px" />
+    <h2>Nahuel B</h2>
+  </div>
   <a href="">Descarga CV</a>
 </div>
 
@@ -9,8 +12,107 @@
     top: 0%;
     display: flex;
     justify-content: space-between;
-    width: 750px;
-    margin: auto;
-    padding: 1.25rem 1.25rem;
+    align-items: center;
+    width: 780px;
+    padding: 1.25rem 10px;
+    z-index: 20;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .caja-foto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .caja-foto img {
+    border-radius: 50%;
+    border: 3px solid #161e2d;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .contenedor-nav a {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    background-color: rgba(35, 135, 68, 0.9);
+    color: rgba(203, 213, 225, 0.8);
+    -webkit-box-shadow: 7px 7px 0px 0px #404c61;
+    -moz-box-shadow: 7px 7px 0px 0px #404c61;
+    box-shadow: 4px 4px 0px 0px #404c61;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .contenedor-nav a:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+
+  .contenedor-nav h2 {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .scroll0 {
+    backdrop-filter: blur(10px);
+    background-color: rgba(31, 41, 55, 0.5);
+    transition: all 0.1s ease-in-out;
+  }
+
+  .scroll1 {
+    backdrop-filter: blur(10px);
+    background-color: rgba(31, 41, 55, 0.5);
+    transition: all 0.1s ease-in-out;
+  }
+
+  .scroll1 h2,
+  .scroll1 img {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .scroll2 {
+    backdrop-filter: blur(10px);
+    background-color: rgba(31, 41, 55, 0.5);
+    transition: all 0.1s ease-in-out;
+  }
+
+  .scroll2 a,
+  .scroll2 h2,
+  .scroll2 img {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
   }
 </style>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("navBar");
+
+    let scroll = window.scrollY;
+
+    if (scroll > 0 && scroll < 300) {
+      header?.classList.add("scroll0");
+      header?.classList.remove("scroll1");
+      header?.classList.remove("scroll2");
+    } else if (scroll >= 300 && scroll < 400) {
+      header?.classList.add("scroll1");
+      header?.classList.remove("scroll2");
+      header?.classList.remove("scroll0");
+    } else if (scroll >= 400) {
+      header?.classList.add("scroll2");
+      header?.classList.remove("scroll1");
+      header?.classList.remove("scroll0");
+    } else {
+      header?.classList.remove("scroll0");
+      header?.classList.remove("scroll1");
+      header?.classList.remove("scroll2");
+    }
+    console.log(scroll);
+  });
+</script>

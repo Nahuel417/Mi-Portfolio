@@ -1,0 +1,80 @@
+<div class="caja-links">
+  <a href="https://github.com/Nahuel417" target="_blank" class="github">
+    <i class="bi bi-github"></i> GitHub</a
+  >
+  <a
+    href="https://www.linkedin.com/in/nahuelbanco/"
+    target="_blank"
+    class="linkedIn"
+  >
+    <i class="bi bi-linkedin"></i> LinkedIn</a
+  >
+  <a href="" class="cv">
+    <i class="bi bi-folder-symlink-fill"></i> Descargar CV</a
+  >
+</div>
+
+<style>
+  .caja-links {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    gap: 5%;
+  }
+
+  .caja-links a.cv {
+    background-color: rgba(35, 135, 68, 0.9);
+  }
+
+  .caja-links a.linkedIn {
+    background-color: #1452aa;
+  }
+
+  .caja-links a i {
+    margin-right: 5px;
+    transition: all 0.3s;
+  }
+
+  .caja-links a.github {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .caja-links a.github i {
+    color: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s;
+  }
+
+  .caja-links a {
+    border: 2px solid rgba(128, 128, 128, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s;
+    -webkit-box-shadow: 7px 7px 0px 0px #404c61;
+    -moz-box-shadow: 7px 7px 0px 0px #404c61;
+    box-shadow: 7px 7px 0px 0px #404c61;
+    margin-top: 30px;
+  }
+
+  .caja-links a.github:hover {
+    color: #000;
+  }
+
+  .caja-links a.github:hover i {
+    color: #000;
+  }
+
+  .caja-links a:hover i {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-links a:hover {
+    transform: translateY(5px);
+    box-shadow: none;
+    color: rgb(255, 255, 255);
+  }
+</style>
