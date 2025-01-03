@@ -3,62 +3,33 @@ import MySQL from "./svgs/MySQL.astro";
 import Postgres from "./svgs/Postgres.astro";
 import TypeORM from "./svgs/TypeORM.astro";
 import Mongo from "./svgs/Mongo.astro";
-import Mongoose from "./svgs/Mongoose.astro";
 ---
 
-<article>
-  <div class="caja-bd">
-    <h3>Base de Datos</h3>
-    <div class="caja-skills">
-      <div class="caja-svg">
-        <Postgres />
-        <p>Postgres</p>
-      </div>
-      <div class="caja-svg">
-        <MySQL />
-        <p>MySQL</p>
-      </div>
-      <div class="caja-svg">
-        <TypeORM />
-        <p>TypeORM</p>
-      </div>
-      <div class="caja-svg">
-        <Mongo />
-        <p>MongoDB</p>
-      </div>
-      <div class="caja-svg">
-        <Mongoose />
-        <p>Mongoose</p>
-      </div>
-    </div>
+<>
+  <div class="caja-svg">
+    <Postgres />
+    <p>Postgres</p>
   </div>
-</article>
+  <div class="caja-svg">
+    <MySQL />
+    <p>MySQL</p>
+  </div>
+  <div class="caja-svg">
+    <TypeORM />
+    <p>TypeORM</p>
+  </div>
+  <div class="caja-svg">
+    <Mongo />
+    <p>MongoDB</p>
+  </div>
+</>
 
 <style>
-  article {
-    width: 48%;
-    border: 1px solid;
-    padding: 20px 25px;
-    border-radius: 8px;
-    background: #2b3544;
-  }
-
-  .caja-bd h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .caja-skills {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
   .caja-svg {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px 5px;
+    gap: 8px;
   }
 </style>

@@ -1,0 +1,29 @@
+---
+import SkillsBack from "./SkillsBack.astro";
+import SkillsFront from "./SkillsFront.astro";
+import SkillsBD from "./SkillsBD.astro";
+import SkillsSoft from "./SkillsSoft.astro";
+---
+
+<article>
+  <div class="caja-skills">
+    <SkillsBack />
+    <SkillsFront />
+    <SkillsBD />
+    <SkillsSoft />
+  </div>
+</article>
+
+<style>
+  article {
+    width: 100%;
+    padding: 20px 5px;
+  }
+
+  .caja-skills {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+  }
+</style>

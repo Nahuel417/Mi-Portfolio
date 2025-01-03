@@ -1,8 +1,6 @@
 ---
 import Bootstrap from "./svgs/Bootstrap.astro";
 import React from "./svgs/React.astro";
-import ReactRouter from "./svgs/ReactRouter.astro";
-import Vite from "./svgs/Vite.astro";
 import Tailwind from "./svgs/Tailwind.astro";
 import NextJS from "./svgs/NextJS.astro";
 import Html from "./svgs/Html.astro";
@@ -10,71 +8,43 @@ import CSS from "./svgs/CSS.astro";
 import AstroSvg from "./svgs/AstroSvg.astro";
 ---
 
-<article>
-  <div class="caja-front">
-    <h3>Frontend</h3>
-    <div class="caja-skills">
-      <div class="caja-svg">
-        <React />
-        <p>React</p>
-      </div>
-      <div class="caja-svg">
-        <Bootstrap />
-        <p>Bootstrap</p>
-      </div>
-      <div class="caja-svg">
-        <Vite />
-        <p>Vite</p>
-      </div>
-      <div class="caja-svg">
-        <Tailwind />
-        <p>Tailwind</p>
-      </div>
-      <div class="caja-svg">
-        <NextJS />
-        <p>NextJS</p>
-      </div>
-      <div class="caja-svg">
-        <Html />
-        <p>HTML5</p>
-      </div>
-      <div class="caja-svg">
-        <CSS />
-        <p>CSS</p>
-      </div>
-      <div class="caja-svg">
-        <AstroSvg />
-        <p>Astro</p>
-      </div>
-    </div>
+<>
+  <div class="caja-svg">
+    <React />
+    <p>React</p>
   </div>
-</article>
+  <div class="caja-svg">
+    <Bootstrap />
+    <p>Bootstrap</p>
+  </div>
+  <div class="caja-svg">
+    <Tailwind />
+    <p>Tailwind</p>
+  </div>
+  <div class="caja-svg">
+    <NextJS />
+    <p>NextJS</p>
+  </div>
+  <div class="caja-svg">
+    <Html />
+    <p>HTML5</p>
+  </div>
+  <div class="caja-svg">
+    <CSS />
+    <p>CSS</p>
+  </div>
+  <div class="caja-svg">
+    <AstroSvg />
+    <p>Astro</p>
+  </div>
+</>
 
 <style>
-  article {
-    width: 48%;
-    border: 1px solid;
-    border-radius: 8px;
-    padding: 20px 25px;
-    background: #2b3544;
-  }
-
-  .caja-front h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .caja-skills {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
   .caja-svg {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px 5px;
+    gap: 8px;
   }
 </style>

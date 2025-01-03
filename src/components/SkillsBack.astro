@@ -1,89 +1,50 @@
 ---
-import JS from "./svgs/JS.astro";
-import TS from "./svgs/TS.astro";
-import Node from "./svgs/Node.astro";
-import Nest from "./svgs/Nest.astro";
-import Express from "./svgs/Express.astro";
-import JWT from "./svgs/JWT.astro";
 import AWS from "./svgs/AWS.astro";
-import Cloudinary from "./svgs/Cloudinary.astro";
-import Sequelize from "./svgs/Sequelize.astro";
-import Swagger from "./svgs/Swagger.astro";
+import Express from "./svgs/Express.astro";
+import JS from "./svgs/JS.astro";
+import JWT from "./svgs/JWT.astro";
+import Nest from "./svgs/Nest.astro";
+import Node from "./svgs/Node.astro";
+import TS from "./svgs/TS.astro";
 ---
 
-<article>
-  <div class="caja-back">
-    <h3>Backend</h3>
-    <div class="caja-skills">
-      <div class="caja-svg">
-        <TS />
-        <p>TypeScript</p>
-      </div>
-      <div class="caja-svg">
-        <JS />
-        <p>JavaScript</p>
-      </div>
-      <div class="caja-svg">
-        <Node />
-        <p>Node.js</p>
-      </div>
-      <div class="caja-svg">
-        <Nest />
-        <p>NestJS</p>
-      </div>
-      <div class="caja-svg">
-        <Express />
-        <p>Express</p>
-      </div>
-      <div class="caja-svg">
-        <JWT />
-        <p>JWT</p>
-      </div>
-      <div class="caja-svg">
-        <AWS />
-        <p>AWS S3</p>
-      </div>
-      <div class="caja-svg">
-        <Cloudinary />
-        <p>Cloudinary</p>
-      </div>
-      <div class="caja-svg">
-        <Sequelize />
-        <p>Sequelize</p>
-      </div>
-      <div class="caja-svg">
-        <Swagger />
-        <p>Swagger</p>
-      </div>
-    </div>
+<>
+  <div class="caja-svg">
+    <TS />
+    <p>TypeScript</p>
   </div>
-</article>
+  <div class="caja-svg">
+    <JS />
+    <p>JavaScript</p>
+  </div>
+  <div class="caja-svg">
+    <Node />
+    <p>Node.js</p>
+  </div>
+  <div class="caja-svg">
+    <Nest />
+    <p>NestJS</p>
+  </div>
+  <div class="caja-svg">
+    <Express />
+    <p>Express</p>
+  </div>
+  <div class="caja-svg">
+    <JWT />
+    <p>JWT</p>
+  </div>
+  <div class="caja-svg">
+    <AWS />
+    <p>AWS S3</p>
+  </div>
+</>
 
 <style>
-  article {
-    width: 48%;
-    border: 1px solid;
-    padding: 20px 25px;
-    border-radius: 8px;
-    background: #2b3544;
-  }
-
-  .caja-back h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .caja-skills {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
   .caja-svg {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px 5px;
+    gap: 8px;
   }
 </style>

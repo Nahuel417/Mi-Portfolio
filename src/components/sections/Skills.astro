@@ -1,23 +1,17 @@
 ---
 import Section from "../Section.astro";
-import SkillsFront from "../SkillsFront.astro";
-import SkillsBack from "../SkillsBack.astro";
-import SkillsBD from "../SkillsBD.astro";
-import SkillsSoft from "../SkillsSoft.astro";
+import CajaSkills from "../CajaSkills.astro";
 ---
 
 <Section>
-  <div class="contenedor-skills">
+  <div class="contenedor-skills" id="skills">
     <div class="caja-titulo">
       <h2>Más Skills</h2>
       <i class="bi bi-code-slash"></i>
     </div>
 
     <div class="contenedor-info">
-      <SkillsFront />
-      <SkillsBack />
-      <SkillsBD />
-      <SkillsSoft />
+      <CajaSkills />
     </div>
   </div>
 </Section>
@@ -43,8 +37,8 @@ import SkillsSoft from "../SkillsSoft.astro";
 
   .contenedor-info {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column;
     gap: 30px;
   }
 </style>
