@@ -3,7 +3,9 @@
     <img src="/fotoDePerfil.jpeg" alt="foto-perfil" width="40px" />
     <h2>Nahuel B</h2>
   </div>
-  <a href="">Descarga CV</a>
+  <a href="CV_NAHUEL_BANCO.pdf " download="CV-NAHUEL-BANCO" target="_blank">
+    Descarga CV</a
+  >
 </div>
 
 <style>
@@ -33,7 +35,7 @@
   }
 
   .contenedor-nav a {
-    padding: 8px 12px;
+    padding: 8px 16px;
     border-radius: 5px;
     font-weight: 700;
     font-size: 14px;
@@ -41,13 +43,14 @@
     color: rgba(203, 213, 225, 0.8);
     -webkit-box-shadow: 7px 7px 0px 0px #404c61;
     -moz-box-shadow: 7px 7px 0px 0px #404c61;
-    box-shadow: 4px 4px 0px 0px #404c61;
+    box-shadow: 5px 5px 0px 0px #404c61;
     opacity: 0;
     transition: all 0.2s ease-in-out;
   }
 
   .contenedor-nav a:hover {
     transform: translateY(3px);
+    color: rgba(255, 255, 255, 0.9);
     box-shadow: none;
   }
 
@@ -71,20 +74,8 @@
   }
 
   .scroll1 h2,
-  .scroll1 img {
-    opacity: 1;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .scroll2 {
-    backdrop-filter: blur(10px);
-    background-color: rgba(31, 41, 55, 0.5);
-    transition: all 0.1s ease-in-out;
-  }
-
-  .scroll2 a,
-  .scroll2 h2,
-  .scroll2 img {
+  .scroll1 img,
+  .scroll1 a {
     opacity: 1;
     transition: all 0.2s ease-in-out;
   }
@@ -99,20 +90,12 @@
     if (scroll > 0 && scroll < 300) {
       header?.classList.add("scroll0");
       header?.classList.remove("scroll1");
-      header?.classList.remove("scroll2");
-    } else if (scroll >= 300 && scroll < 400) {
+    } else if (scroll >= 300) {
       header?.classList.add("scroll1");
-      header?.classList.remove("scroll2");
-      header?.classList.remove("scroll0");
-    } else if (scroll >= 400) {
-      header?.classList.add("scroll2");
-      header?.classList.remove("scroll1");
       header?.classList.remove("scroll0");
     } else {
       header?.classList.remove("scroll0");
       header?.classList.remove("scroll1");
-      header?.classList.remove("scroll2");
     }
-    console.log(scroll);
   });
 </script>
