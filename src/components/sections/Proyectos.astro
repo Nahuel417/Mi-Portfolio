@@ -128,4 +128,19 @@ const propsTarjetasChicas = [
     justify-content: space-between;
     padding: 0px 10px;
   }
+
+  /*  MEDIA QUERIES  */
+  @media (max-width: 768px) {
+    .contenedor-grande-tarjetas {
+      justify-content: space-between;
+      padding: 0;
+      gap: 30px;
+    }
+
+    .contenedor-chico-tarjetas {
+      flex-direction: column;
+      gap: 20px;
+      padding: 0;
+    }
+  }
 </style>

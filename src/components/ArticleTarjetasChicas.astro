@@ -193,4 +193,24 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
     color: transparent;
     transition: all 0.3s ease-in;
   }
+
+  @media (max-width: 768px) {
+    article {
+      width: 100%;
+      padding: 20px 20px 10px 20px;
+    }
+
+    .caja-titulo h2 {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 26px;
+    }
+
+    article p {
+      font-size: 16px;
+    }
+
+    .caja-skills-2 {
+      gap: 14px;
+    }
+  }
 </style>

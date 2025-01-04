@@ -26,12 +26,12 @@ import NavBar from "../components/NavBar.astro";
 
 <style>
   header {
-    width: 780px;
+    max-width: 768px;
     margin: auto;
   }
 
   main {
-    width: 800px;
+    max-width: 768px;
     margin: auto;
     margin-bottom: 3rem;
   }
@@ -49,5 +49,12 @@ import NavBar from "../components/NavBar.astro";
     border: none;
     border-top: 2px dotted rgba(255, 255, 255, 0.2);
     background-color: none;
+  }
+
+  /*  MEDIA QUERIES  */
+  @media (max-width: 768px) {
+    div {
+      gap: 2.5rem;
+    }
   }
 </style>

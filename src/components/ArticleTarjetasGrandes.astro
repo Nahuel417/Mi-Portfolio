@@ -217,4 +217,36 @@ const { titulo, img, descripcion, skills, deploy, code, desarrollo } =
     width: 100%;
     height: 100%;
   }
+
+  /*  MEDIA QUERIES  */
+  @media (max-width: 768px) {
+    .tarjeta {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 20px;
+    }
+
+    .caja-img {
+      width: 100%;
+    }
+
+    .caja-info {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .caja-titulo h2 {
+      font-size: 28px;
+    }
+
+    .caja-info p {
+      font-size: 16px;
+    }
+
+    .caja-skills {
+      gap: 14px;
+    }
+  }
 </style>
