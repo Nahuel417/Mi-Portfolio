@@ -7,14 +7,14 @@ import Section from "../Section.astro";
   <div class="contenedor-headline">
     <div class="caja-foto">
       <figure>
-        <img src="/fotoDePerfil.jpeg" alt="foto-perfil" width="100%" />
+        <img src="/fotoDePerfil.webp" alt="foto-perfil" width="100%" />
       </figure>
       <div>
         <h1>Nahuel Banco</h1>
         <h3>Desarrollador Web Fullstack</h3>
         <p>
-          +2 años de experiencia utilizando tecnologías de desarrollo fullstack,
-          abarcando tanto el front-end como el back-end.
+          +2 años de experiencia en desarrollo full stack, disfrutando tanto del
+          front-end como del back-end.
         </p>
       </div>
     </div>
@@ -51,6 +51,11 @@ import Section from "../Section.astro";
     top: -5px;
   }
 
+  .caja-foto p {
+    font-weight: 600;
+    color: rgba(203, 213, 225, 0.7);
+  }
+
   .caja-foto figure {
     width: 45%;
   }
@@ -62,5 +67,47 @@ import Section from "../Section.astro";
 
   /*  MEDIA QUERIES  */
   @media (max-width: 768px) {
+    .caja-foto {
+      margin-bottom: 10px;
+      gap: 30px;
+    }
+
+    .caja-foto figure {
+      min-width: 178px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .caja-foto {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .caja-foto figure {
+      max-width: 210px;
+    }
+
+    .caja-foto div {
+      text-align: center;
+    }
+
+    .caja-foto h1 {
+      font-size: 40px;
+    }
+
+    .caja-foto h3 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+    }
+
+    .caja-foto p {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .caja-foto h1 {
+      font-size: 38px;
+    }
   }
 </style>

@@ -1,6 +1,6 @@
 <div class="contenedor-nav" id="navBar">
   <div class="caja-foto">
-    <img src="/fotoDePerfil.jpeg" alt="foto-perfil" width="40px" />
+    <img src="/fotoDePerfil.webp" alt="foto-perfil" width="40px" />
     <h2>Nahuel B</h2>
   </div>
   <a href="CV_NAHUEL_BANCO.pdf " download="CV-NAHUEL-BANCO" target="_blank">
@@ -24,7 +24,7 @@
   .caja-foto {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
   }
 
   .caja-foto img {
@@ -84,6 +84,12 @@
     .contenedor-nav {
       padding: 1.25rem 20px;
       width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contenedor-nav a {
+      font-size: 12px;
     }
   }
 </style>

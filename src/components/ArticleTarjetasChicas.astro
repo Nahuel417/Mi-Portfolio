@@ -213,4 +213,20 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
       gap: 14px;
     }
   }
+
+  @media (max-width: 640px) {
+    .caja-enlaces a i {
+      color: rgba(209, 215, 224, 0.8);
+    }
+  }
+
+  @media (max-width: 480px) {
+    article p {
+      font-size: 15px;
+    }
+
+    .caja-titulo h2 {
+      font-size: 22px;
+    }
+  }
 </style>

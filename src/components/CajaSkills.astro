@@ -21,19 +21,29 @@ import SkillsSoft from "./SkillsSoft.astro";
   }
 
   .caja-skills {
-    /* display: grid;
+    display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, auto);
-    gap: 10px; */
-    display: flex;
+    gap: 10px;
+    /* display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: center; */
   }
 
   @media (max-width: 768px) {
     article {
       padding: 0;
+    }
+
+    .caja-skills {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .caja-skills {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
