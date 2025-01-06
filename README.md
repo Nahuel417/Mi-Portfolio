@@ -2,6 +2,10 @@
 
 Bienvenido a mi página personal donde muestro mis proyectos y habilidades como desarrollador.
 
+## Captura de Pantalla
+
+![cap-portfolio](https://github.com/user-attachments/assets/633235ac-82a4-4245-afc2-8a124f6d759d)
+
 ## Descripción
 
 Este portfolio está diseñado para presentar mis capacidades y experiencia en el desarrollo web. A través de este sitio puedes conocer más sobre mi carrera, los proyectos en los que he trabajado, mis habilidades técnicas y mi formación académica.
@@ -24,11 +28,6 @@ Las secciones principales de este portfolio incluyen:
 - **Educación**: Resumen de mi formación académica.
 - **Skills**: Habilidades técnicas que he adquirido a lo largo de mi carrera.
 - **Contacto**: Formas de contactarme.
-
-## Captura de Pantalla
-
-![cap-portfolio](https://github.com/user-attachments/assets/633235ac-82a4-4245-afc2-8a124f6d759d)
-
 
 ## Enlace al Deploy
 
