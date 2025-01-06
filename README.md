@@ -31,4 +31,4 @@ Las secciones principales de este portfolio incluyen:
 
 ## Enlace al Deploy
 
-Puedes ver la versión en vivo del portfolio aquí: [Link](https://nahuelb.netlify.app/)
+Puedes ver la versión en vivo del portfolio aquí: [Deploy](https://nahuelb.netlify.app/)
