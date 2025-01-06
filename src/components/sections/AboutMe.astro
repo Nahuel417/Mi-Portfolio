@@ -48,11 +48,23 @@ import Contacto from "../Contacto.astro";
     gap: 30px;
   }
 
+  @media (max-width: 768px) {
+    .contenedor-info {
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contenedor-info {
+      gap: 5px;
+    }
+  }
+
   @media (max-width: 480px) {
     .contenedor-info {
       flex-direction: column;
-      gap: 20px;
-      margin-bottom: 30px;
+      gap: 25px;
+      margin-bottom: 25px;
     }
   }
 </style>

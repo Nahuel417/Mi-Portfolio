@@ -26,5 +26,13 @@ import Gitlab from "./svgs/Gitlab.astro";
     align-items: center;
     margin: 10px 5px;
     gap: 8px;
+    cursor: default;
+    transition: all 0.2s;
+  }
+
+  @media (min-width: 769px) {
+    .caja-svg:hover {
+      transform: translateY(-10px);
+    }
   }
 </style>
