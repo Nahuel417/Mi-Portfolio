@@ -27,8 +27,9 @@ Las secciones principales de este portfolio incluyen:
 
 ## Captura de Pantalla
 
-![Captura del portfolio](ruta/a/tu/captura.png)
+![cap-portfolio](https://github.com/user-attachments/assets/633235ac-82a4-4245-afc2-8a124f6d759d)
+
 
 ## Enlace al Deploy
 
-Puedes ver la versión en vivo del portfolio aquí: [Enlace al Deploy](https://tu-enlace-deploy)
+Puedes ver la versión en vivo del portfolio aquí: [Link](https://nahuelb.netlify.app/)
