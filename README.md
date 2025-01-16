@@ -1,48 +1,34 @@
-# Astro Starter Kit: Basics
+# NahuelB Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenido a mi página personal donde muestro mis proyectos y habilidades como desarrollador.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Captura de Pantalla
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![cap-portfolio](https://github.com/user-attachments/assets/633235ac-82a4-4245-afc2-8a124f6d759d)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Descripción
 
-## 🚀 Project Structure
+Este portfolio está diseñado para presentar mis capacidades y experiencia en el desarrollo web. A través de este sitio puedes conocer más sobre mi carrera, los proyectos en los que he trabajado, mis habilidades técnicas y mi formación académica.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tecnologías Utilizadas
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Astro**: Framework utilizado para la construcción del proyecto.
+- **HTML** y **CSS**: Para la estructura y diseño de la página.
+- **JavaScript**: Lenguaje de programación para la interactividad.
+- **Bootstrap**: Framework de diseño para una rápida implementación de estilos responsivos.
+- **TailwindCSS**: Framework de utilidades para personalizar los estilos.
+- **Bun**: Paquete manager utilizado para la gestión de dependencias y la construcción del proyecto.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Estructura del Proyecto
 
-## 🧞 Commands
+Las secciones principales de este portfolio incluyen:
 
-All commands are run from the root of the project, from a terminal:
+- **Sobre mí**: Una pequeña introducción sobre quién soy.
+- **Proyectos**: Muestra de los proyectos en los que he trabajado.
+- **Educación**: Resumen de mi formación académica.
+- **Skills**: Habilidades técnicas que he adquirido a lo largo de mi carrera.
+- **Contacto**: Formas de contactarme.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Enlace al Deploy
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Puedes ver la versión en vivo del portfolio aquí: [Deploy](https://nahuelb.netlify.app/)
