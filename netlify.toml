@@ -1,0 +1,6 @@
+[build]
+  command = "./setup.sh && bun install && bun run build"
+  publish = "dist"  # Cambia 'dist' por la carpeta donde se generan los archivos de salida de tu build (si es diferente)
+
+[context.production.environment]
+  NODE_ENV = "production"
