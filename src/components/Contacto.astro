@@ -7,7 +7,7 @@ import Copiar from "./svgs/Copiar.astro";
   <h2>Email <i class="bi bi-envelope"></i></h2>
   <p class="mensaje opacityCero" id="mensaje">Copiado</p>
   <div class="caja-input">
-    <span class="email" id="email">Banconahuel417@gmail.com</span>
+    <span class="email" id="email">banconahuel417@gmail.com</span>
     <button type="submit" id="botonCopiar" class="mostrar boton-copiar">
       <Copiar />
     </button>
@@ -99,6 +99,25 @@ import Copiar from "./svgs/Copiar.astro";
     @media (max-width: 480px) {
       .caja-contacto h2 {
         margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .caja-input {
+        justify-content: space-between;
+        gap: 0;
+      }
+
+      .caja-input span {
+        width: 75%;
+        text-align: start;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .caja-input button {
+        padding: 6px 10px;
       }
     }
   </style>
