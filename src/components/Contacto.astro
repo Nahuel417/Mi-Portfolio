@@ -8,11 +8,11 @@ import Copiar from "./svgs/Copiar.astro";
   <p class="mensaje opacityCero" id="mensaje">Copiado</p>
   <div class="caja-input">
     <span class="email" id="email">Banconahuel417@gmail.com</span>
-    <button type="submit" id="botonCopiar" class="mostrar">
+    <button type="submit" id="botonCopiar" class="mostrar boton-copiar">
       <Copiar />
     </button>
 
-    <button type="submit" class="oculto" id="botonCopiado">
+    <button type="submit" id="botonCopiado" class="oculto boton-copiado">
       <Copiado />
     </button>
   </div>
@@ -53,8 +53,17 @@ import Copiar from "./svgs/Copiar.astro";
 
     .caja-input button {
       background: #6366f1;
+      transition: all 0.3s ease-in-out;
       padding: 6px 12px;
       border-radius: 8px;
+    }
+
+    .caja-input button.boton-copiar:hover {
+      background-color: rgba(241, 113, 179, 0.9);
+    }
+
+    .caja-input button.boton-copiado {
+      cursor: default;
     }
 
     p.mensaje {
