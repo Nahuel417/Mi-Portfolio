@@ -1,0 +1,123 @@
+---
+import ExperiencieComponent from "../ExperiencieComponent.astro";
+import Section from "../Section.astro";
+
+const propsExperiencia = [
+  {
+    titulo: "Desarrollador Web Frontend",
+    empresa: "Lilab",
+    subtitulo:
+      "Desarrollo y mantenimiento de una plataforma web basada en microservicios llamada",
+    fecha: "Mar 2025 - Jun 2025",
+    lista: [
+      "Desarrollé funcionalidades claves con React, TypeScript y Redux.",
+      "Diseñé e implementé componentes visuales reutilizables.",
+      "Optimizcé el rendimiento de la aplicación.",
+      "Gestioné el estado global con Redux y Zustand.",
+      "Colaboré en un equipo ágil (Scrum) con reuniones diarias y semanales.",
+      "Usé herramientas como GitHub y Trello para la gestión y seguimiento del proyecto.",
+    ],
+    proyecto: "Prikly",
+    url: "https://www.prikly.io/",
+    target: true,
+  },
+  {
+    titulo: "Proyectos Propios y Formación",
+    empresa: "",
+    subtitulo:
+      "Aplicación práctica de conocimientos adquiridos en cursos, bootcamps y autoformación mediante",
+    fecha: "Ene 2024 - Actualidad",
+    lista: [
+      "Construí APIs RESTful con Node.js, Express y NestJS, aplicando arquitectura limpia.",
+      "Desarrollé interfaces modernas con React, Astro y Tailwind, enfocadas en UX.",
+      "Gestioné bases de datos SQL y NoSQL con PostgreSQL, MySQL y MongoDB.",
+      "Usé Docker para entornos de desarrollo consistentes y escalables.",
+      "Implementé autenticación con JWT y protegí rutas en frontend y backend.",
+      "Apliqué buenas prácticas, control de versiones con GitHub y CI/CD.",
+      "Complementado con otras tecnologías y prácticas de desarrollo adquiridas.",
+    ],
+    proyecto: "proyectos",
+    url: "#proyectos",
+    target: false,
+  },
+];
+---
+
+<Section>
+  <div class="contenedor-experiencias">
+    <div class="caja-titulo">
+      <h2>Experiencia</h2>
+      <i class="bi bi-briefcase"></i>
+    </div>
+
+    <div class="contenedor-info">
+      {
+        propsExperiencia.map((exp, i) => (
+          <ExperiencieComponent
+            key={i}
+            titulo={exp.titulo}
+            empresa={exp.empresa}
+            subtitulo={exp.subtitulo}
+            fecha={exp.fecha}
+            lista={exp.lista}
+            proyecto={exp.proyecto}
+            url={exp.url}
+            target={exp.target}
+          />
+        ))
+      }
+    </div>
+  </div>
+</Section>
+
+<style>
+  .caja-titulo {
+    display: flex;
+    gap: 8px;
+  }
+  .x {
+    display: flex;
+    gap: 8px;
+  }
+
+  .caja-titulo h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .caja-titulo i {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: 5px;
+    font-size: 30px;
+  }
+
+  .contenedor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .contenedor-info {
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contenedor-info {
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contenedor-info {
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+  }
+</style>

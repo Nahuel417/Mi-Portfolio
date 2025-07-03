@@ -1,0 +1,267 @@
+---
+interface Props {
+  key?: number;
+  titulo?: string;
+  empresa?: string;
+  subtitulo?: string;
+  fecha?: string;
+  lista?: string[];
+  proyecto?: string;
+  url?: string;
+  target?: boolean;
+}
+
+const { titulo, empresa, subtitulo, lista, fecha, proyecto, url, target } =
+  Astro.props;
+---
+
+<div class="contenedor-tarjeta">
+  <span class="circulo">•</span>
+  <article class="tarjeta-exp">
+    <div class="contenedor-titulo">
+      <div class="caja-titulo">
+        {
+          empresa ? (
+            <p class="titulo">
+              {titulo}
+              <span>•</span>
+              {empresa}
+            </p>
+          ) : (
+            <p class="titulo">{titulo}</p>
+          )
+        }
+
+        <div class="tooltip-wrapper">
+          <button class="boton-ver-mas" id="botonVerMas"
+            ><i class="bi bi-arrow-down-circle-fill icono" id="icono"
+            ></i></button
+          >
+          <span class="tooltip-text" id="tooltipText">Ver más</span>
+        </div>
+      </div>
+      <div class="caja-subtitulo">
+        <p class="texto-subtitulo">
+          {subtitulo}
+
+          {
+            proyecto && [
+              <a
+                href={url}
+                class="texto-proyecto"
+                title="Ir"
+                target={target ? "_blank" : ""}
+              >
+                {proyecto}.
+              </a>,
+            ]
+          }
+        </p>
+
+        <span class="texto-fecha">{fecha}</span>
+      </div>
+    </div>
+
+    <ul class="caja-lista oculto" id="cajaLista">
+      {lista?.map((list) => <li>{list}</li>)}
+    </ul>
+
+    <div></div>
+  </article>
+</div>
+
+<style>
+  .contenedor-tarjeta {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .contenedor-tarjeta span.circulo {
+    font-size: 44px;
+    color: rgba(241, 113, 179, 0.9);
+  }
+
+  .tarjeta-exp {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(203, 213, 225, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .tarjeta-exp:hover {
+    border-color: rgba(203, 213, 225, 0.7);
+    box-shadow: 14px 14px 0px 0px #404c61;
+    transform: translateX(-14px) translateY(-14px);
+  }
+
+  .tarjeta-exp:hover #icono {
+    color: rgba(203, 213, 225, 0.7);
+  }
+
+  .tarjeta-exp.activo {
+    border-color: rgba(203, 213, 225, 0.7);
+    box-shadow: 14px 14px 0px 0px #404c61;
+    transform: translateX(-14px) translateY(-14px);
+  }
+
+  .tarjeta-exp.activo #icono {
+    color: rgba(203, 213, 225, 0.7);
+  }
+
+  .contenedor-titulo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .caja-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .titulo {
+    font-size: 22px;
+    color: rgba(241, 113, 179, 0.9);
+  }
+
+  .texto-proyecto {
+    color: rgba(241, 113, 179, 0.9);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .texto-proyecto:hover {
+    color: #6366f1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .boton-ver-mas {
+    transition: all 0.4s ease-in-out;
+  }
+
+  .tooltip-text {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    background-color: #6366f1;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .tooltip-wrapper:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #icono {
+    font-size: 24px;
+    color: #404c61;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .texto-fecha {
+    font-weight: 500;
+    font-size: 14px;
+    color: rgba(203, 213, 225, 0.5);
+  }
+
+  .caja-subtitulo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .caja-subtitulo p.texto-subtitulo {
+    color: rgba(203, 213, 225, 1);
+  }
+
+  .caja-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: disc;
+    list-style-position: outside;
+    padding-left: 20px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .caja-lista li {
+    color: rgba(203, 213, 225, 0.8);
+  }
+
+  .oculto {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .mostrar {
+    max-height: 1000px;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+    margin-top: 20px;
+  }
+
+  .girar {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".tarjeta-exp").forEach((tarjeta) => {
+    const botonVerMas = tarjeta.querySelector(".boton-ver-mas");
+    const lista = tarjeta.querySelector(".caja-lista");
+    const icono = tarjeta.querySelector(".icono");
+    const tooltip = tarjeta.querySelector(".tooltip-text");
+
+    function toggleLista() {
+      const estaOculto = lista?.classList.contains("oculto");
+
+      if (estaOculto) {
+        botonVerMas?.classList.add("girar");
+        icono?.classList.add("girar");
+        lista?.classList.remove("oculto");
+        lista?.classList.add("mostrar");
+        tarjeta?.classList.add("activo");
+        if (tooltip) tooltip.textContent = "Ver menos";
+      } else {
+        botonVerMas?.classList.remove("girar");
+        icono?.classList.remove("girar");
+        lista?.classList.remove("mostrar");
+        lista?.classList.add("oculto");
+        tarjeta?.classList.remove("activo");
+        if (tooltip) tooltip.textContent = "Ver más";
+      }
+    }
+
+    botonVerMas?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleLista();
+    });
+
+    tarjeta?.addEventListener("click", () => {
+      toggleLista();
+    });
+  });
+</script>
