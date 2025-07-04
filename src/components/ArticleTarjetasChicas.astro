@@ -81,13 +81,15 @@ const { titulo, descripcion, skills, deploy, code, desarrollo } = Astro.props;
         ),
       )
     }
-    <a href="#skills">
+    <a href="#skills" title="Más Skills">
       <i class="bi bi-plus-circle-fill more"></i>
     </a>
   </div>
   <div class="caja-enlaces">
-    <a href={code} target="_blank"><i class="bi bi-terminal-fill"></i> </a>
-    <a href={deploy} target="_blank"
+    <a href={code} target="_blank" title="Code"
+      ><i class="bi bi-terminal-fill"></i>
+    </a>
+    <a href={deploy} target="_blank" title="Enlace"
       ><i class="bi bi-browser-chrome google"></i>
     </a>
   </div>

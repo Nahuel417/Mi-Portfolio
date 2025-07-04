@@ -4,7 +4,7 @@
     <h2>Nahuel B</h2>
   </div>
   <a href="NAHUEL-BANCO-CV .pdf " download="CV-NAHUEL-BANCO" target="_blank">
-    Descarga CV</a
+    Descargar CV</a
   >
 </div>
 
@@ -16,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     width: 768px;
-    padding: 1.25rem 10px;
+    padding: 1.25rem;
     z-index: 20;
     transition: all 0.1s ease-in-out;
   }
@@ -41,17 +41,15 @@
     font-size: 14px;
     background-color: rgba(35, 135, 68, 0.9);
     color: rgba(203, 213, 225, 0.8);
-    -webkit-box-shadow: 7px 7px 0px 0px #404c61;
-    -moz-box-shadow: 7px 7px 0px 0px #404c61;
-    box-shadow: 5px 5px 0px 0px #404c61;
     opacity: 0;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
 
   .contenedor-nav a:hover {
-    transform: translateY(3px);
-    color: rgba(255, 255, 255, 0.9);
-    box-shadow: none;
+    color: rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 7px 7px 0px 0px #404c61;
+    -moz-box-shadow: 7px 7px 0px 0px #404c61;
+    box-shadow: 7px 7px 0px 0px #404c61;
   }
 
   .contenedor-nav h2 {
@@ -80,6 +78,19 @@
     transition: all 0.2s ease-in-out;
   }
 
+  .deslizar-desde-arriba {
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: bajarSuavemente 0.4s ease-out forwards;
+  }
+
+  @keyframes bajarSuavemente {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   @media (max-width: 768px) {
     .contenedor-nav {
       padding: 1.25rem 20px;
@@ -97,18 +108,33 @@
 <script>
   window.addEventListener("scroll", () => {
     const header = document.getElementById("navBar");
+    const imagen = header?.querySelector("img");
+    const boton = header?.querySelector("a");
+    const nombre = header?.querySelector("h2");
 
     let scroll = window.scrollY;
 
     if (scroll > 0 && scroll < 300) {
       header?.classList.add("scroll0");
       header?.classList.remove("scroll1");
+
+      imagen?.classList.remove("deslizar-desde-arriba");
+      boton?.classList.remove("deslizar-desde-arriba");
+      nombre?.classList.remove("deslizar-desde-arriba");
     } else if (scroll >= 300) {
       header?.classList.add("scroll1");
       header?.classList.remove("scroll0");
+
+      imagen?.classList.add("deslizar-desde-arriba");
+      boton?.classList.add("deslizar-desde-arriba");
+      nombre?.classList.add("deslizar-desde-arriba");
     } else {
       header?.classList.remove("scroll0");
       header?.classList.remove("scroll1");
+
+      imagen?.classList.remove("deslizar-desde-arriba");
+      nombre?.classList.remove("deslizar-desde-arriba");
+      boton?.classList.remove("deslizar-desde-arriba");
     }
   });
 </script>
